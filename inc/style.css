@@ -145,6 +145,11 @@ BODY {
   float: left;
 }
 
+#radar DIV IMG,
+#radar2 DIV IMG {
+  opacity: 0.75;
+}
+
 .fc-day {
   width: 20%;
   float: left;
