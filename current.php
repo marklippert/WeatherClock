@@ -18,8 +18,7 @@ $icon = pathinfo($cc['icon_url']);
 <div class="two-col">
   <img src="images/<?php echo $icon['filename']; ?>.svg" alt="<?php echo $cc['weather']; ?>" class="icon">
   <?php echo $cc['weather']; ?>
-  <div class="temp"><?php echo $cc['temp_f']; ?>&deg;F</div>
-  Feels like <?php echo $cc['feelslike_f']; ?>&deg;F
+  <div class="temp"><?php echo round($cc['temp_f']); ?>&deg;</div>
 </div>
 
 <?php
@@ -30,14 +29,14 @@ $wind_dir = ($cc['wind_mph'] < 0) ? "variable" : "from " . $cc['wind_dir'];
 <div class="two-col">
   <div id="wind">
     <div id="windarrow" style="transform: rotate(<?php echo $wind_deg; ?>deg);"></div>
-    <?php echo $wind_mph; ?>
+    <?php echo round($wind_mph); ?>
   </div>
   Wind <?php echo $wind_dir; ?>
 
   <div id="dew">
+    Feels like <?php echo round($cc['feelslike_f']); ?>&deg;<br>
     Humidity <?php echo $cc['relative_humidity']; ?><br>
-    Dew Point <?php echo $cc['dewpoint_f']; ?>&deg;F<br>
-    Pressure <?php echo $cc['pressure_in'] . "\""; ?>
+    Dew Point <?php echo $cc['dewpoint_f']; ?>&deg;
   </div>
 </div>
 
