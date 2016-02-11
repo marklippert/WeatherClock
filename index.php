@@ -11,7 +11,7 @@
   <script>
     $(document).ready(function() {
       $('#current').load('current.php');
-      setInterval(function() { $('#current').load('current.php') }, <?php echo $weather_refresh; ?>);
+      setInterval(function() { $('#current').load('current.php') }, <?php echo $current_refresh; ?>);
       var radar_width = $("#radar").width();
       var radar_height = $("#radar").height();
       $('#radar').load('radar.php', { rw:radar_width, rh:radar_height, rz:<?php echo $zoom; ?>, ro:<?php echo $lon_offset1; ?> });
@@ -21,7 +21,7 @@
       $('#radar2').load('radar.php', { rw:radar2_width, rh:radar2_height, rz:<?php echo $zoom2; ?>, ro:<?php echo $lon_offset2; ?> });
       setInterval(function() { $('#radar2').load('radar.php', { rw:radar2_width, rh:radar2_height, rz:<?php echo $zoom2; ?>, ro:<?php echo $lon_offset2; ?> }); }, <?php echo $radar_refresh; ?>);
       $('#forecast').load('forecast.php');
-      setInterval(function() { $('#forecast').load('forecast.php') }, <?php echo $weather_refresh; ?>);
+      setInterval(function() { $('#forecast').load('forecast.php') }, <?php echo $forecast_refresh; ?>);
       $.ajaxSetup({ cache: false });
     });
 
@@ -51,8 +51,6 @@
 </head>
 <body onload="startTime()">
 
-<!-- <div style="width: 1024px; height: 600px; outline: 1px solid black;"> -->
-
 <div class="left-col">
   <div id="current"></div>
   <div id="radar"></div>
@@ -64,8 +62,6 @@
   <div id="radar2"></div>
   <div id="forecast"></div>
 </div>
-
-<!-- </div> -->
 
 </body>
 </html>

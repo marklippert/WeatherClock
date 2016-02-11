@@ -11,6 +11,7 @@ $lon_offset2 = "0"; // Shift marker left or right on radar 2
 $zoom = 10; // Zoom level of radar 1
 $zoom2 = 5; // Zoom level of radar 2
 
-$weather_refresh = 30 * 60000; # minutes multiplied by 60000 (milliseconds per minute)
-$radar_refresh = 10 * 60000; # minutes multiplied by 60000 (milliseconds per minute)
+$current_refresh = 15 * 60000; // minutes multiplied by 60000 (milliseconds per minute)
+$radar_refresh = 10 * 60000; // minutes multiplied by 60000 (milliseconds per minute)
+$forecast_refresh = 60 * 60000; // minutes multiplied by 60000 (milliseconds per minute)
 ?>
